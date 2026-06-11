@@ -1,98 +1,118 @@
-# Design System — AI Operator Sprint v0.2
+# Design System — AI Operator Sprint v0.3
 
 > Single source of truth for EVERY surface: site, OG cards, video graphics, carousels, thumbnails. Nothing ships with ad-hoc values.
-> **Direction: Electric Dusk** — from Ved's own moodboard (Ved x Education), corrected from the v0.1 guess and validated against field evidence (see `../../learning AI GTM engineering` workspace, stage 02 references/design-references.md): serif-display + mono + tinted near-black is the apex pattern at Claude, Resend, and Raycast — and none of them pair a high-contrast serif with purple darks. Distinctive, not derivative. **Pending Ved's approval (FIN-120).**
+> **Direction: PAPER LEDGER** — picked 2026-06-11 from a three-direction board built on live-site evidence (therawmaterials.com, rauno.me, duties.xyz, antimetal.com, linear.app/method, press.stripe.com, apple.com). A field manual printed on warm paper: ink rules frame the page like a sheet, the 30 days are a rail of numbered pigment cards, display type is huge and cropped at the frame like a physical object. **FROZEN. v0.2 (Electric Dusk) is superseded.**
 
 ## Brand stance
 
-Indie film poster meets terminal. Dark, warm, editorial marketing surfaces; calm warm-paper reading surfaces for lessons. Energy comes from type scale, one coral accent, and restrained motion — never from gradients-on-everything, glow borders, or blur orbs (the exact genre we reject; claudecodechallenge already wears it). Echo of Ved's INVOKER identity (serif display, mono uppercase labels, temperature-shift accent words) without copying it.
+A printed field manual you can run. Warm paper, confident ink, one pigment per week. Energy comes from type scale, the accumulating ledger, and calm spring motion — never from gradients, glow borders, or blur orbs. The page is a sheet; the type is an object on it; your progress is the only thing that adds color. In a feed full of dark-mode AI sites, this looks like a printed artifact — that contrast is the brand.
 
 ## Tokens
 
 ```css
 :root {
-  /* — Dark surfaces (marketing: /, /live, OG, video plates) — Electric Dusk */
-  --twilight: #0E0B14;        /* page bg */
-  --dusk: #1A1524;            /* raised */
-  --purple-ash: #2E2640;      /* surface 2 / cards */
-  --line: rgba(255,255,255,0.08);          /* hairlines; 0.5px where @supports */
-  --line-strong: rgba(255,255,255,0.15);
+  /* — The sheet — */
+  --paper: #F2E7DC;            /* page field, warm */
+  --paper-soft: #EBDFD2;       /* wells on paper, alternating bands */
+  --card: #FFFFFF;             /* specimen cards: artifacts, lessons, modules */
+  --ink: #0E0E0E;              /* text, frames, the voice */
+  --ink-soft: #5C564E;         /* secondary text on paper/card */
+  --ink-line: rgba(14,14,14,0.92);   /* 1px page frame + ledger rules */
+  --ink-hair: rgba(14,14,14,0.16);   /* hairline dividers */
 
-  /* — Paper surfaces (lessons, curriculum reading) — warm ivory, proven at Anthropic */
-  --paper: #FAF9F5;
-  --paper-raised: #F0EEE6;
-  --ink: #141413;             /* warm black, not neutral */
-  --ink-soft: #5A564E;
-  --paper-line: rgba(20,20,19,0.12);
+  /* — Ink wells (code/prompt blocks float dark on paper) — */
+  --well: #141312;             /* prompt/terminal block bg */
+  --well-text: #F2E7DC;        /* paper-toned text inside wells */
 
-  /* — Accent: ONE color, two contexts */
-  --coral: #E8614A;           /* Electric Coral — dark surfaces, highlights, active states */
-  --coral-ink: #A93B28;       /* AA-safe coral for text on paper */
+  /* — Week pigments: the calendar IS the palette — */
+  --w1: #FC4408;               /* Week 1 — vermillion */
+  --w2: #5B04C4;               /* Week 2 — violet */
+  --w3: #2F31F5;               /* Week 3 — blue */
+  --w4: #101010;               /* Week 4 — ink */
+  --w1-ink: #B53105; --w2-ink: #4A03A0; --w3-ink: #2628C4; --w4-ink: #101010;
+  /* `--accent` is ALIASED PER PAGE to the current week's pigment (see rule 1) */
+  --accent: var(--w1);
+  --accent-ink: var(--w1-ink);  /* AA-safe variant for text */
 
-  /* — Text on dark */
-  --pale-violet: #C8C0D8;     /* primary */
-  --lavender-haze: #8A7EA8;   /* secondary */
-  --white: #FFFFFF;           /* display headlines only */
+  /* — Status (semantics only, never decoration) — */
+  --done: #1F7A33;             /* deep green tick/fill, AA on card */
+  --error: #B3261E;
 
-  /* — Type */
-  --font-display: "Fraunces", Georgia, serif;          /* 600; display sizes ≥32px ONLY */
-  --font-body: "Outfit", system-ui, sans-serif;        /* 400/500; captions use 800 */
-  --font-mono: "JetBrains Mono", ui-monospace, monospace; /* labels, prompts, numbers, dates */
+  /* — Type — */
+  --font-display: "Bricolage Grotesque", "Arial Narrow", sans-serif; /* 600–800; ≥40px; may crop */
+  --font-body: "Hanken Grotesk", system-ui, sans-serif;              /* 400/500/700; captions 800 */
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;            /* labels, numerals, prompts */
+  /* Optional enhancement: self-hosted Departure Mono for day numerals only (free license, not on GF) */
 
-  /* — Scale (1.25, rem) */
+  /* — Scale (1.25, rem) — */
   --text-xs: .75rem; --text-sm: .875rem; --text-base: 1rem; --text-lg: 1.25rem;
   --text-xl: 1.5625rem; --text-2xl: 1.953rem; --text-3xl: 2.441rem;
-  --text-4xl: 3.052rem; --text-5xl: 3.815rem;
+  --text-4xl: 3.052rem; --text-5xl: 3.815rem; --text-display: clamp(4rem, 12vw, 11rem);
 
-  /* — Spacing (4px) */
+  /* — Spacing (4px) — */
   --s-1: 4px; --s-2: 8px; --s-3: 12px; --s-4: 16px; --s-6: 24px;
   --s-8: 32px; --s-12: 48px; --s-16: 64px; --s-24: 96px;
 
-  --radius: 10px; --radius-lg: 16px;
-  --text-col: 640px;          /* max width for any readable column (Anthropic discipline) */
+  /* — Geometry — */
+  --frame-inset: 14px;         /* page-edge margin before the ink frame */
+  --radius-frame: 20px;        /* the sheet's corner */
+  --radius-card: 16px;         /* specimen cards */
+  --radius-ui: 8px;            /* inputs, wells */
+  --radius-pill: 999px;        /* buttons, nav islands */
+  --text-col: 640px;           /* max width for any reading column */
 
-  /* — Motion (two-speed, evidence-backed) */
-  --ease-micro: cubic-bezier(0.25,0.46,0.45,0.94);   /* 150ms — hovers, toggles (Linear) */
-  --ease-ui: cubic-bezier(0.165,0.84,0.44,1);        /* 250ms — panels, accordions (Claude/Clay) */
-  --ease-hero: cubic-bezier(0.25,1,0.5,1);           /* 800ms — hero/section reveals (Claude) */
-  /* asymmetric hover (Attio): transition 300ms, but hover-in duration 50ms */
+  /* — Motion (high-damping, no bounce) — */
+  --ease-micro: cubic-bezier(0.25,0.46,0.45,0.94);   /* 120–150ms — hovers, ticks */
+  --ease-ui: cubic-bezier(0.165,0.84,0.44,1);        /* 250ms — card lifts, panels */
+  --ease-hero: cubic-bezier(0.25,1,0.5,1);           /* 700ms — section reveals, week-tint crossfade */
+  /* asymmetric hover: settle 300ms out, 50ms in */
 }
 ```
 
-## Signature moves (borrowed with receipts)
+## Signature moves (borrowed with receipts — all verified on the live sites 2026-06-11)
 
-1. **Gradient-clipped serif H1** on twilight — Fraunces 600, `linear-gradient(to bottom right, #fff 30%, #ffffff80)` text-clip, line-height 100%, balanced. *(Resend)*
-2. **Mono annotation system** — JetBrains Mono uppercase micro-labels numbering everything: `DAY 07`, `WEEK 2.0`, `FIG 0.3`-style. The "terminal document" conceit. *(Linear)*
-3. **Day-row grammar** — fixed-width mono `DAY N` column + title + self-tracked checkbox + strikethrough on done + `?day=next` deep link. *(couchto5k)*
-4. **Ghost numerals** — oversized Fraunces day numbers at low alpha as the card's typographic object, coral-tinted on hover. *(claudecodechallenge, re-voiced)*
-5. **Tabular-nums mono counters** for streaks/commitment counts — numbers are the brand; render them like instrument readouts. *(Vercel, minus the LCD font)*
-6. **Asymmetric hover** — slow settle (300ms), instant response (50ms). *(Attio)*
-7. **Lesson ritual anatomy** (paper surface): Intro → Today's Task → Prompt-to-copy (mono block, copy button) → Expected Outcome → Failure Modes → "You're done for today. Tomorrow: …" *(claudecodechallenge skeleton + couchto5k hard-stop)*
-8. **Color-field sectioning** instead of card grids where possible — alternate twilight/dusk bands, one idea per band. *(Anthropic)*
+1. **The printed sheet** — a 1px `--ink-line` frame inset `--frame-inset` from the viewport edge, `--radius-frame` corners. Every page lives inside it; it is the first thing that says "this is a document, not a dashboard." *(therawmaterials.com)*
+2. **The pigment-card rail, 00–30** — the nav IS the tracker: numbered rounded cards, one per day. Done = filled in its week pigment, current = lifted (+2px, soft shadow, pigment border), future = paper outline ghost. Week = pigment family, so the rail becomes a gradient of your month. *(therawmaterials.com index; streak logic from Brilliant)*
+3. **Cropped display type** — Bricolage 700–800 headlines sized past the frame and clipped by it; type behaves like a physical object on the sheet, never letter-spaced or squished. *(rauno.me/craft, duties.xyz)*
+4. **One geometry accent per page** — a single circle (or quarter-arc) in the current week's pigment, overlapping the display type. Accent as object, not as text color. *(rauno.me)*
+5. **Day-local subnav** — `DAY 14 / 30` mono label + Lesson · Build · Ship · Tomorrow with an underline indicator that slides. *(apple.com product pages)*
+6. **Ledger rows** — the curriculum index as numbered rows with `--ink-hair` rules: mono `01` column, title, self-tracked tick, strikethrough on done, `?day=next` deep link. *(linear.app/method TOC; couchto5k deep link)*
+7. **Ink wells** — prompt/code blocks as dark `--well` slabs floating on paper, mono, copy button top-right with "copied ✓" in week pigment. Continuity bonus: IDE/terminal footage in videos sits naturally inside them. *(terminal-on-paper conceit)*
+8. **Two-tone paragraphs** — the key phrase in `--ink`, the rest in `--ink-soft`. Attention steered by contrast alone, no highlights. *(linear.app)*
+9. **The artifact shelf** — every shipped day adds a white specimen card (title, mono date, link/screenshot) to a public shelf; progress display = accumulated proof. *(rauno.me cards; Are.na logic)*
+10. **Instrument counters** — live numbers (operators committed, days shipped) in tabular-nums mono, labeled like readouts: `OPERATORS 214`. *(teenage.engineering nav labels; Vercel counters)*
 
 ## Rules that prevent slop
 
-1. **One accent.** Coral only. It marks: active states, the current day, completion moments, one word per headline maximum. Never decorative.
-2. **Fraunces at display sizes (≥32px) only** — never body, never captions. Body is always Outfit. Numbers/labels/prompts always mono.
-3. **Dark sells, paper teaches.** Marketing = twilight. Lessons = warm paper. No theme toggle in v1.
-4. **Hairlines, not shadows** — rgba borders (0.5px where supported); shadow only on the sticky Coach panel.
-5. **No: glow borders, blur orbs, animated gradients, per-character text animation, bounce easing.** (Each banned by a brand we respect — and by the 2026 fatigue the scouts documented.)
-6. **No locked states.** Field evidence: zero of six challenge/course sites lock content. Pacing is *coached* (/today resolver + Coach), never enforced. Trust is the brand.
-7. **Copy buttons on every prompt block** — the most-used component; mono, coral "copied ✓" state.
-8. **Progress shown positively, always.** "12 of 30 done." Celebration (confetti-class) reserved for week boundaries + Day 30.
-9. **WCAG AA everywhere** — coral-ink (not coral) for text on paper; focus rings 2px coral; targets ≥44px.
-10. **640px max** on any reading column. Film grain 3.5% on dark marketing surfaces only — never over screen recordings (see EDIT-RECIPE), never on paper.
+1. **Pigment is the calendar.** Only the current week's pigment is active on a page (`--accent` aliased per page/day). All four appear together ONLY in the rail and the week strip. Never two accents in one composition.
+2. **Bricolage at ≥40px only; it may crop, never squish.** Body is always Hanken. Numbers, labels, dates, prompts: always mono. No letter-spacing on display sizes.
+3. **Ink rules, not shadows.** Shadow exists in exactly two places: the lifted current-day card and the sticky Coach panel.
+4. **Accent never carries text.** Week pigments are fills, geometry, and indicators. Text accents use the `--w*-ink` AA variants, one phrase max per screen.
+5. **No: glow borders, blur orbs, animated/mesh gradients, per-character text animation, bounce easing, dark-mode toggle.** The sheet is paper; that's the point.
+6. **No locked states.** All 31 days open from day one. Pacing is coached (`/today` resolver + Coach), never enforced. Trust is the brand.
+7. **Copy buttons on every prompt block** — the most-used component.
+8. **Progress shown positively, always.** "12 of 30 shipped." Celebration reserved for week boundaries (rail row completes its pigment) + Day 30. No confetti spam.
+9. **WCAG AA everywhere.** Pigment-ink variants for text; focus rings 2px `--accent` offset 2px, designed not default; targets ≥44px; `prefers-reduced-motion` honored AND credited in the footer.
+10. **640px max reading column. Zero CLS.** Fonts preloaded + `font-display: swap` with size-adjusted fallbacks; the frame never reflows.
+
+## Behavioral wiring (THE LEDGER OF PROOF — the figure on this substrate)
+
+- **Day 0 = the commitment sentence** (headline-as-form: "In 30 days I'll build [___] and demo it to [___]."). Locking it stamps a dated white card — the first artifact on your shelf. (Implementation intention + endowment.)
+- **Signup = a visible row**: "operator #214 · committed · day 3" joins the public ledger (anonymous handle). Social proof = real rows, never self-congratulation.
+- **Zeigarnik close**: every lesson ends "You're done for today. Tomorrow: …" — one line, ink-soft.
+- **Goal-gradient ambient**: as the week advances, its pigment quietly accumulates in the rail; Week strips warm the page edges by ~2% tint.
+- **Peak-end**: Day 30 = Demo Day (the peak); weekly SHIP days = mini-peaks with the only celebration moments.
 
 ## Core components (build order)
 
-PromptBlock → DayRow (mono label + checkbox + strikethrough) → ProgressBar + WeekTabs → GhostNumeral DayCard → CommitmentForm (venue + date, "lock in your demo") → CoachPanel → ShareModal (editable prefilled message) → SiteNav/Footer.
+PromptWell (ink well + copy) → LedgerRow → PigmentRail (00–30) → DayShell (frame + day-local subnav) → GeometryAccent → CommitmentSentence (Day-0 form) → ArtifactShelf → InstrumentCounter → CoachPanel → ShareModal → SiteNav/Footer.
 
 ## Voice
 
-Direct, warm, UK-flavoured, zero guru-speak. Plan honesty early and often ("free, no card, nothing to buy during the sprint — the only cost is Claude Pro, ~$20/mo"). Hard stops celebrated. Numbers over adjectives. British spelling. Banned: "unleash", "supercharge", "10x your life", 🚀-energy.
+Direct, warm, UK-flavoured, zero guru-speak. Plan honesty early and often ("free, no card — the only cost is Claude Pro, ~$20/mo"). Hard stops celebrated. Numbers over adjectives. British spelling. Banned: "unleash", "supercharge", "10x your life", 🚀-energy.
 
 ## Cross-surface
 
-- **OG cards (1200×630):** twilight bg, ghost Fraunces day numeral, title in Fraunces, mono meta line, coral progress dots, @thevedlabs mark. One template, 31 outputs.
-- **Video:** full spec in workspace `stages/03-content/references/EDIT-RECIPE.md` — Fraunces for hook cards (≥72px), Outfit 800 for karaoke captions (NOT Fraunces — stroke shimmer at small sizes), coral highlight word, plate `#0E0B14` @ 85%, grain ≤2% over screen recordings.
-- **Carousels/thumbnails:** same tokens; thumbnails ≤3 words, ≥75px.
+- **OG cards (1200×630):** paper bg, ink frame, giant cropped Bricolage day numeral bleeding off-frame, week-pigment circle overlapping it, mono meta line, @thevedlabs mark. One template, 31 outputs.
+- **Video:** full spec in the (private) EDIT-RECIPE — plates flip to **ink-on-paper**: plate `--paper` @ ~92% over footage, captions Hanken Grotesk 800 with the week pigment as highlight, hook cards Bricolage ≥80px cropped at plate edges, mono labels. Grain ≤2%, never over screen recordings. In a dark feed, the paper plates read as printed objects — that's the thumb-stop.
+- **Carousels/thumbnails:** same tokens; thumbnails ≤3 words, ≥75px, one geometry accent.

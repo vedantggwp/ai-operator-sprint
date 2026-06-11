@@ -1,0 +1,9 @@
+# AI Operator Sprint
+
+> A free 30-day program: build your first AI operating system in 10 minutes a day. This repo is agent-readable — AGENTS.md tells your AI how to coach a human through the sprint.
+
+- [How agents should coach this sprint](AGENTS.md)
+- [The 30-day curriculum index](curriculum/README.md)
+- [Day 0 — The Commitment](curriculum/days/day-00.md)
+- [Design system](design/DESIGN-SYSTEM.md)
+- Curriculum license: CC BY 4.0 (credit: AI Operator Sprint by Vedant Gaikwad). Code: MIT.

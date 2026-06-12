@@ -1,0 +1,15 @@
+{
+  "counters": [
+    { "label": "OPERATORS COMMITTED", "value": 0 },
+    { "label": "DAYS SHIPPED", "value": 0 },
+    { "label": "PUBLIC DEMOS BOOKED", "value": 0 }
+  ],
+  "rows": [
+    {
+      "handle": "@thevedlabs",
+      "status": "committed",
+      "day": 0,
+      "artefact": "Day 0 commitment"
+    }
+  ]
+}

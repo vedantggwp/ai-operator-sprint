@@ -24,12 +24,41 @@ export type WeekGroup = {
   days: DayMeta[];
 };
 
-const daysDir = path.join(process.cwd(), "..", "curriculum", "days");
 const dayFilePattern = /^day-(\d{2})\.md$/;
+
+/**
+ * Resolve the canonical curriculum/days directory regardless of the build cwd.
+ *
+ * The markdown lives at the repository root (`curriculum/days`), the public
+ * agent-readable contract. Depending on where the build runs, cwd may be the
+ * Next app (`site/`), the repo root, or one level deeper, so we probe upward
+ * rather than trusting a single relative hop. Resolved once and cached.
+ */
+let cachedDaysDir: string | null = null;
+function resolveDaysDir(): string {
+  if (cachedDaysDir) return cachedDaysDir;
+
+  const candidates = [
+    path.join(process.cwd(), "curriculum", "days"),
+    path.join(process.cwd(), "..", "curriculum", "days"),
+    path.join(process.cwd(), "..", "..", "curriculum", "days"),
+  ];
+
+  for (const dir of candidates) {
+    if (fs.existsSync(dir)) {
+      cachedDaysDir = dir;
+      return dir;
+    }
+  }
+
+  throw new Error(
+    `curriculum/days not found. cwd=${process.cwd()}; searched: ${candidates.join(", ")}`,
+  );
+}
 
 export function getAllDays(): DayMeta[] {
   return fs
-    .readdirSync(daysDir)
+    .readdirSync(resolveDaysDir())
     .filter((fileName) => dayFilePattern.test(fileName))
     .map((fileName) => readDayMeta(fileName))
     .sort((a, b) => a.day - b.day);
@@ -37,7 +66,7 @@ export function getAllDays(): DayMeta[] {
 
 export function getDay(day: number): DayContent | null {
   const fileName = `day-${dayLabel(day)}.md`;
-  const filePath = path.join(daysDir, fileName);
+  const filePath = path.join(resolveDaysDir(), fileName);
 
   if (!fs.existsSync(filePath)) return null;
 
@@ -70,7 +99,7 @@ export function getWeekGroups(days: DayMeta[] = getAllDays()): WeekGroup[] {
 }
 
 function readDayMeta(fileName: string): DayMeta {
-  const raw = fs.readFileSync(path.join(daysDir, fileName), "utf8");
+  const raw = fs.readFileSync(path.join(resolveDaysDir(), fileName), "utf8");
   return normaliseFrontmatter(matter(raw).data, fileName);
 }
 

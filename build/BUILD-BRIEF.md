@@ -50,6 +50,20 @@ The site in `site/` already has the routes, the tracker, the OG pipeline, and Pl
 - When curriculum and frontend both pass their gates, open a PR from `build/launch-fleet` to `master`. Title: "Launch: full 30-day curriculum + finished site". Body: what you completed, the fact-check summary, and what remains for the human (add the Cloudflare DNS record, flip Vercel protection or go to production, fact-check the flagged claims, optionally add Supabase/Resend keys for email). Do not merge it.
 - If you run low on context or time, stop cleanly: commit what you have, and write in STATUS.md exactly which day you reached and the next step, so a re-run picks up from there. On a re-run, read STATUS.md first and continue rather than starting over.
 
+## Parallel build protocol (this is a fleet, not one agent)
+
+Several cloud agents run at once. Your trigger prompt tells you your role. To avoid collisions, each role owns a disjoint slice and its own branch. Never write a file outside your slice.
+
+**Week writers.** Branch off `build/launch-fleet` into your own branch, write ONLY your week's day files, and push that branch:
+- Week 1 (voice-rewrite of existing drafts), days 01-07, branch `build/w1`
+- Week 2, days 08-14, branch `build/w2`
+- Week 3, days 15-21, branch `build/w3`
+- Week 4, days 22-30, branch `build/w4`
+
+Write your fact-check notes to your OWN file `build/factcheck-wN.md` (never the shared FACTCHECK.md). Do not touch `site/`, `build/STATUS.md`, or any other week. Commit and push your branch when your seven or nine days pass the checklist. You are independent: you do not wait for anyone.
+
+**Lead / finisher.** You work on `build/launch-fleet`. Each run: verify the `site/` build and lint first. Then assemble whatever is ready: for each existing week branch, run `git fetch origin` then `git checkout origin/build/wN -- curriculum/days/` to pull that week's finished day files onto `build/launch-fleet`. Because weeks touch disjoint files this never conflicts. Compile `build/STATUS.md`, and concatenate any `build/factcheck-wN.md` fragments into `build/FACTCHECK.md`. When all 31 day files are full and the site builds clean, open the PR to master. You are idempotent: if nothing new is ready, do the frontend pass and exit; the next scheduled run assembles more.
+
 ## The one rule above all
 
 Never fabricate a fact to sound complete. A flagged claim is a success. A confident wrong number is a failure. The human is offline and is trusting this branch.

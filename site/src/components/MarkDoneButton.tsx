@@ -1,11 +1,14 @@
 "use client";
 
-import { useMemo, useSyncExternalStore } from "react";
+import { useMemo, useState, useSyncExternalStore } from "react";
 import {
-  SPRINT_PROGRESS_EVENT,
-  SPRINT_PROGRESS_KEY,
-  type SprintProgress,
+  celebrationForCompletion,
   normaliseCompleted,
+  normaliseProgress,
+  readStoredProgress,
+  subscribeToProgress,
+  todayISO,
+  writeStoredProgress,
 } from "@/lib/progress";
 
 type MarkDoneButtonProps = {
@@ -13,69 +16,73 @@ type MarkDoneButtonProps = {
 };
 
 export function MarkDoneButton({ day }: MarkDoneButtonProps) {
-  const completedSnapshot = useSyncExternalStore(
+  const [message, setMessage] = useState("");
+  const progressSnapshot = useSyncExternalStore(
     subscribeToProgress,
-    getCompletedSnapshot,
-    () => "[]",
+    getProgressSnapshot,
+    () => "{}",
+  );
+  const progress = useMemo(
+    () => normaliseProgress(JSON.parse(progressSnapshot)),
+    [progressSnapshot],
   );
   const completed = useMemo(
-    () => normaliseCompleted(JSON.parse(completedSnapshot)),
-    [completedSnapshot],
+    () => normaliseCompleted(progress.completed),
+    [progress.completed],
   );
   const done = completed.includes(day);
 
   function markDone() {
-    const progress = readProgress();
-    const nextCompleted = completed.includes(day)
-      ? completed
-      : [...completed, day].sort((a, b) => a - b);
+    if (done) return;
 
-    writeProgress({
-      ...progress,
+    const storedProgress = normaliseProgress(readStoredProgress());
+    const currentCompleted = normaliseCompleted(storedProgress.completed);
+    const nextCompleted = currentCompleted.includes(day)
+      ? currentCompleted
+      : [...currentCompleted, day].sort((a, b) => a - b);
+    const celebration = celebrationForCompletion(
+      day,
+      nextCompleted,
+      storedProgress.celebrations,
+    );
+    const celebrations = celebration
+      ? [...(storedProgress.celebrations ?? []), celebration.key]
+      : storedProgress.celebrations;
+
+    writeStoredProgress({
+      ...storedProgress,
+      sprintStart: storedProgress.sprintStart ?? todayISO(),
       completed: nextCompleted,
+      celebrations,
     });
+
+    setMessage(celebration?.message ?? "Progress saved.");
   }
 
   return (
-    <button
-      type="button"
-      aria-pressed={done}
-      onClick={markDone}
-      className="min-h-11 rounded-full border bg-ink px-5 py-3 font-mono text-xs uppercase text-paper transition-colors duration-150 hover:border-[color:var(--accent)]"
-      style={{ borderColor: "var(--ink-line)" }}
-    >
-      {done ? "Marked done" : "Mark today done"}
-    </button>
+    <div className="flex flex-col gap-3">
+      <button
+        type="button"
+        aria-pressed={done}
+        onClick={markDone}
+        className="min-h-11 rounded-full border bg-ink px-5 py-3 font-mono text-xs uppercase text-paper transition-colors duration-150 hover:border-[color:var(--accent)]"
+        style={{ borderColor: "var(--ink-line)" }}
+      >
+        {done ? "Marked done" : "Mark today done"}
+      </button>
+      {message ? (
+        <p
+          aria-live="polite"
+          className="max-w-[var(--text-col)] border-l pl-3 text-sm text-ink-soft"
+          style={{ borderColor: "var(--accent)" }}
+        >
+          {message}
+        </p>
+      ) : null}
+    </div>
   );
 }
 
-function readProgress(): SprintProgress {
-  try {
-    const raw = window.localStorage.getItem(SPRINT_PROGRESS_KEY);
-    return raw ? (JSON.parse(raw) as SprintProgress) : {};
-  } catch {
-    return {};
-  }
-}
-
-function readCompleted(): number[] {
-  return normaliseCompleted(readProgress().completed);
-}
-
-function getCompletedSnapshot(): string {
-  return JSON.stringify(readCompleted());
-}
-
-function subscribeToProgress(callback: () => void): () => void {
-  window.addEventListener("storage", callback);
-  window.addEventListener(SPRINT_PROGRESS_EVENT, callback);
-  return () => {
-    window.removeEventListener("storage", callback);
-    window.removeEventListener(SPRINT_PROGRESS_EVENT, callback);
-  };
-}
-
-function writeProgress(progress: SprintProgress) {
-  window.localStorage.setItem(SPRINT_PROGRESS_KEY, JSON.stringify(progress));
-  window.dispatchEvent(new Event(SPRINT_PROGRESS_EVENT));
+function getProgressSnapshot(): string {
+  return JSON.stringify(readStoredProgress());
 }

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Suspense } from "react";
+import { CommitmentArtifact } from "./CommitmentArtifact";
 import { DaySubnav } from "./DaySubnav";
 import { GeometryAccent } from "./GeometryAccent";
 import { MarkDoneButton } from "./MarkDoneButton";
@@ -51,6 +52,8 @@ export function DayShell({
         <Suspense fallback={null}>
           <PickupNotice day={day.day} />
         </Suspense>
+
+        {day.day === 0 ? <CommitmentArtifact /> : null}
 
         <section id="lesson" className="scroll-mt-28 pt-10">
           {children}

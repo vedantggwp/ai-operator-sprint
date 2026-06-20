@@ -3,10 +3,9 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import {
-  SPRINT_PROGRESS_EVENT,
-  SPRINT_PROGRESS_KEY,
-  type SprintProgress,
+  readStoredProgress,
   resolveToday,
+  subscribeToProgress,
 } from "@/lib/progress";
 import { LAST_DAY, dayLabel, weekAccentVar } from "@/lib/theme";
 
@@ -27,7 +26,7 @@ export function PigmentRail({ currentDay }: PigmentRailProps) {
 
   useEffect(() => {
     function refresh() {
-      const progress = readProgress();
+      const progress = readStoredProgress();
       const today = resolveToday(progress);
 
       setState({
@@ -37,12 +36,7 @@ export function PigmentRail({ currentDay }: PigmentRailProps) {
     }
 
     refresh();
-    window.addEventListener("storage", refresh);
-    window.addEventListener(SPRINT_PROGRESS_EVENT, refresh);
-    return () => {
-      window.removeEventListener("storage", refresh);
-      window.removeEventListener(SPRINT_PROGRESS_EVENT, refresh);
-    };
+    return subscribeToProgress(refresh);
   }, [currentDay]);
 
   return (
@@ -58,18 +52,23 @@ export function PigmentRail({ currentDay }: PigmentRailProps) {
               <Link
                 href={`/day/${day}`}
                 aria-current={isCurrent ? "page" : undefined}
-                aria-label={`Day ${dayLabel(day)}`}
+                aria-label={[
+                  `Day ${dayLabel(day)}`,
+                  isCurrent ? "current" : "",
+                  isDone ? "done" : "not done",
+                ]
+                  .filter(Boolean)
+                  .join(", ")}
                 className={[
-                  "flex h-14 w-12 flex-col justify-between rounded-[12px] border p-2 font-mono text-[11px] tabular-nums transition-[transform,border-color,background-color,color,opacity] duration-150",
+                  "flex h-14 w-12 flex-col justify-between rounded-[12px] border bg-paper p-2 font-mono text-[11px] tabular-nums transition-[transform,border-color,background-color,color,opacity] duration-150",
                   isCurrent
                     ? "-translate-y-0.5 bg-card text-ink shadow-[0_2px_10px_var(--ink-hair)]"
                     : isDone
-                      ? "text-card"
+                      ? "text-ink"
                       : "bg-transparent text-ink-soft opacity-50",
                 ].join(" ")}
                 style={{
                   borderColor: isCurrent || isDone ? accent : "var(--ink-hair)",
-                  background: isDone && !isCurrent ? accent : undefined,
                 }}
               >
                 <span>{dayLabel(day)}</span>
@@ -77,7 +76,7 @@ export function PigmentRail({ currentDay }: PigmentRailProps) {
                   aria-hidden="true"
                   className="h-1 rounded-full"
                   style={{
-                    background: isCurrent || isDone ? accent : "var(--ink-hair)",
+                    background: isDone || isCurrent ? accent : "var(--ink-hair)",
                     opacity: isCurrent || isDone ? 1 : 0.8,
                   }}
                 />
@@ -89,13 +88,3 @@ export function PigmentRail({ currentDay }: PigmentRailProps) {
     </nav>
   );
 }
-
-function readProgress(): SprintProgress | null {
-  try {
-    const raw = window.localStorage.getItem(SPRINT_PROGRESS_KEY);
-    return raw ? (JSON.parse(raw) as SprintProgress) : null;
-  } catch {
-    return null;
-  }
-}
-

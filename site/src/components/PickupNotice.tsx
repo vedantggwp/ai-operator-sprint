@@ -17,8 +17,8 @@ export function PickupNotice({ day }: PickupNoticeProps) {
       className="mt-8 max-w-[var(--text-col)] border-b pb-4 text-ink-soft"
       style={{ borderColor: "var(--ink-hair)" }}
     >
-      Pick up where you left off. Day {dayLabel(day)} is ready.
+      Pick up where you left off. Day {dayLabel(day)} is ready. No reset
+      required.
     </p>
   );
 }
-

@@ -22,36 +22,36 @@ export default function Home() {
     >
       <SiteHeader />
 
-      <section className="relative mx-auto max-w-6xl px-5 pt-16 pb-20 sm:px-10">
+      <section className="relative mx-auto max-w-6xl px-5 pt-10 pb-16 sm:px-10 sm:pt-16 sm:pb-20 lg:pt-20">
         <p className="mb-6 font-mono text-xs uppercase text-ink-soft">
           A 30-day public build challenge
         </p>
         <div className="relative">
-          <GeometryAccent className="-top-14 right-[6%] size-44 md:size-64" />
-          <h1 className="relative font-display text-[clamp(3.4rem,9vw,8.5rem)] font-bold leading-[0.95]">
+          <GeometryAccent className="-top-10 right-[4%] size-32 sm:-top-14 sm:size-44 md:size-64" />
+          <h1 className="relative max-w-5xl font-display text-[clamp(3.1rem,8.4vw,8.5rem)] font-bold leading-[0.95]">
             Ship something
             <br />
             real in 30 days.
           </h1>
         </div>
-        <p className="mt-10 max-w-[var(--text-col)] text-lg leading-relaxed text-ink-soft">
+        <p className="mt-8 max-w-[var(--text-col)] text-lg leading-relaxed text-ink-soft sm:mt-10">
           <span className="text-ink font-medium">
             One lesson, one build, one shipped artefact a day
           </span>{" "}
-          — until you demo a working AI system to someone whose opinion you
+          until you demo a working AI system to someone whose opinion you
           care about. No account. No card. Nothing locked.
         </p>
-        <div className="mt-8 flex flex-wrap gap-3">
+        <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
           <Link
             href="/start"
-            className="inline-flex min-h-11 items-center rounded-full border bg-ink px-5 font-mono text-xs uppercase text-paper"
+            className="inline-flex min-h-11 items-center justify-center rounded-full border bg-ink px-5 font-mono text-xs uppercase text-paper transition-colors duration-150 hover:border-[color:var(--accent)] sm:justify-start"
             style={{ borderColor: "var(--ink-line)" }}
           >
             Start Day 0
           </Link>
           <Link
             href="/curriculum"
-            className="inline-flex min-h-11 items-center rounded-full border bg-card px-5 font-mono text-xs uppercase text-ink"
+            className="inline-flex min-h-11 items-center justify-center rounded-full border bg-card px-5 font-mono text-xs uppercase text-ink transition-colors duration-150 hover:border-[color:var(--accent)] sm:justify-start"
             style={{ borderColor: "var(--ink-line)" }}
           >
             View curriculum
@@ -59,14 +59,14 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-6xl px-5 pb-20 sm:px-10">
+      <section className="mx-auto max-w-6xl px-5 pb-16 sm:px-10 sm:pb-20">
         <p className="mb-4 font-mono text-xs uppercase text-ink-soft">
           The ledger · week = pigment
         </p>
         <PigmentRail currentDay={0} />
       </section>
 
-      <section className="mx-auto max-w-6xl px-5 pb-20 sm:px-10">
+      <section className="mx-auto max-w-6xl px-5 pb-16 sm:px-10 sm:pb-20">
         <p className="mb-2 font-mono text-xs uppercase text-ink-soft">
           Week 1 · preview
         </p>
@@ -83,7 +83,7 @@ export default function Home() {
         </ul>
       </section>
 
-      <section className="mx-auto max-w-6xl px-5 pb-24 sm:px-10">
+      <section className="mx-auto max-w-6xl px-5 pb-20 sm:px-10 sm:pb-24">
         <p className="mb-4 font-mono text-xs uppercase text-ink-soft">
           Every day hands you a prompt like this
         </p>

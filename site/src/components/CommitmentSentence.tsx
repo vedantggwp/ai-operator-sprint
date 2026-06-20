@@ -3,10 +3,12 @@
 import { useId, useState, type FormEvent } from "react";
 import { useRouter } from "next/navigation";
 import {
-  SPRINT_PROGRESS_EVENT,
-  SPRINT_PROGRESS_KEY,
   type SprintProgress,
-  normaliseCompleted,
+  normaliseProgress,
+  readStoredProgress,
+  todayISO,
+  upsertArtifact,
+  writeStoredProgress,
 } from "@/lib/progress";
 
 type CommitmentSentenceProps = {
@@ -28,47 +30,63 @@ export function CommitmentSentence({ emailAction }: CommitmentSentenceProps) {
 
     if (!ready) return;
 
-    const progress = readProgress();
+    const progress = normaliseProgress(readStoredProgress());
+    const date = todayISO();
+    const buildCommitment = build.trim();
+    const demoCommitment = demoTo.trim();
     const next: SprintProgress = {
       ...progress,
-      sprintStart: todayISO(),
+      sprintStart: date,
       commitment: {
-        build: build.trim(),
-        demoTo: demoTo.trim(),
+        build: buildCommitment,
+        demoTo: demoCommitment,
       },
-      completed: normaliseCompleted(progress.completed),
+      artifacts: upsertArtifact(progress.artifacts, {
+        id: "day-0-commitment",
+        day: 0,
+        title: "Day 0 commitment",
+        date,
+        detail: `${buildCommitment} -> ${demoCommitment}`,
+      }),
     };
 
-    window.localStorage.setItem(SPRINT_PROGRESS_KEY, JSON.stringify(next));
-    window.dispatchEvent(new Event(SPRINT_PROGRESS_EVENT));
+    writeStoredProgress(next);
     router.push("/day/0");
   }
 
   return (
-    <div className="mx-auto w-full max-w-6xl px-5 pt-10 pb-24 sm:px-10">
+    <div className="mx-auto w-full max-w-6xl px-5 pt-8 pb-20 sm:px-10 sm:pt-10 sm:pb-24">
       <form onSubmit={submit} className="relative">
-        <h1 className="font-display text-[clamp(2.75rem,9vw,7.5rem)] font-bold leading-[1.02] text-ink">
+        <h1 className="max-w-[1040px] font-display text-[clamp(2.55rem,5.65vw,5.75rem)] font-bold leading-[1.04] text-ink">
           <span>In 30 days I&apos;ll build </span>
           <input
             aria-label="What you will build"
+            aria-invalid={attempted && !build.trim()}
             value={build}
             onChange={(event) => setBuild(event.target.value)}
             onFocus={() => setFocused(true)}
             onBlur={() => setFocused(false)}
             placeholder="a working system"
-            className="inline-block min-h-11 w-full max-w-[11ch] border-0 border-b bg-transparent px-1 font-display text-inherit leading-none outline-none placeholder:text-ink-soft sm:w-[11ch]"
-            style={{ borderColor: "var(--ink-line)" }}
+            className="inline-block min-h-11 max-w-full border-0 border-b bg-transparent px-1 font-display text-inherit leading-none outline-none placeholder:text-ink-soft focus:border-b-2 focus:border-[color:var(--accent)]"
+            style={{
+              borderColor: "var(--ink-line)",
+              inlineSize: "min(100%, 10.5ch)",
+            }}
           />
           <span> and demo it to </span>
           <input
             aria-label="Who you will demo it to"
+            aria-invalid={attempted && !demoTo.trim()}
             value={demoTo}
             onChange={(event) => setDemoTo(event.target.value)}
             onFocus={() => setFocused(true)}
             onBlur={() => setFocused(false)}
             placeholder="someone real"
-            className="inline-block min-h-11 w-full max-w-[11ch] border-0 border-b bg-transparent px-1 font-display text-inherit leading-none outline-none placeholder:text-ink-soft sm:w-[11ch]"
-            style={{ borderColor: "var(--ink-line)" }}
+            className="inline-block min-h-11 max-w-full border-0 border-b bg-transparent px-1 font-display text-inherit leading-none outline-none placeholder:text-ink-soft focus:border-b-2 focus:border-[color:var(--accent)]"
+            style={{
+              borderColor: "var(--ink-line)",
+              inlineSize: "min(100%, 10.5ch)",
+            }}
           />
           <span>.</span>
         </h1>
@@ -81,19 +99,26 @@ export function CommitmentSentence({ emailAction }: CommitmentSentenceProps) {
         >
           <button
             type="submit"
+            disabled={!ready}
             aria-disabled={!ready}
             aria-describedby={reasonId}
             className={[
-              "min-h-11 rounded-full border bg-ink px-5 py-3 font-mono text-xs uppercase text-paper transition-[border-color,opacity] duration-150",
-              ready ? "opacity-100 hover:border-[color:var(--accent)]" : "opacity-45",
+              "min-h-11 rounded-full border bg-ink px-5 py-3 font-mono text-xs uppercase text-paper transition-[border-color,opacity] duration-150 disabled:pointer-events-none",
+              ready
+                ? "opacity-100 hover:border-[color:var(--accent)]"
+                : "opacity-45",
             ].join(" ")}
             style={{ borderColor: "var(--ink-line)" }}
           >
             Lock it in
           </button>
-          <p id={reasonId} className="max-w-sm text-sm text-ink-soft">
+          <p
+            id={reasonId}
+            aria-live="polite"
+            className="max-w-sm text-sm text-ink-soft"
+          >
             {ready
-              ? "This stores your start date and commitment in this browser."
+              ? "This stores your start date, commitment, and first artefact in this browser."
               : attempted
                 ? "Add both slots to lock the commitment."
                 : "Add both slots when you are ready."}
@@ -138,21 +163,4 @@ export function CommitmentSentence({ emailAction }: CommitmentSentenceProps) {
       </form>
     </div>
   );
-}
-
-function readProgress(): SprintProgress {
-  try {
-    const raw = window.localStorage.getItem(SPRINT_PROGRESS_KEY);
-    return raw ? (JSON.parse(raw) as SprintProgress) : {};
-  } catch {
-    return {};
-  }
-}
-
-function todayISO(): string {
-  const today = new Date();
-  const year = today.getFullYear();
-  const month = String(today.getMonth() + 1).padStart(2, "0");
-  const day = String(today.getDate()).padStart(2, "0");
-  return `${year}-${month}-${day}`;
 }

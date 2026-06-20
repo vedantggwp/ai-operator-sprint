@@ -52,7 +52,9 @@ The site in `site/` already has the routes, the tracker, the OG pipeline, and Pl
 
 ## Parallel build protocol (this is a fleet, not one agent)
 
-Several cloud agents run at once. Your trigger prompt tells you your role. To avoid collisions, each role owns a disjoint slice and its own branch. Never write a file outside your slice.
+**If your trigger prompt tells you to execute this brief end to end (the solo/lead agent), ignore the per-week split below and do ALL 31 days yourself, sequentially, on `build/launch-fleet`, then verify the site and open the PR. The week-writer split only applies when a trigger explicitly assigns you a single week.**
+
+Several cloud agents may run at once. Your trigger prompt tells you your role. To avoid collisions, each role owns a disjoint slice and its own branch. Never write a file outside your slice.
 
 **Week writers.** Branch off `build/launch-fleet` into your own branch, write ONLY your week's day files, and push that branch:
 - Week 1 (voice-rewrite of existing drafts), days 01-07, branch `build/w1`

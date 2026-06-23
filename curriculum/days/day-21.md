@@ -62,7 +62,7 @@ Pick your strongest automation from the week. Run it one more time on real input
 ## Ship
 
 
-Today's artifact is the ship record for your best running automation: a description, a time-saved number, a how-to-run section, and a tracker update.
+Today's artefact is the ship record for your best running automation: a description, a time-saved number, a how-to-run section, and a tracker update.
 
 
 - [ ] Best automation chosen and run on real inputs
@@ -84,7 +84,7 @@ Today's artifact is the ship record for your best running automation: a descript
 ## Going deeper (optional)
 
 
-Write a 100-word retrospective on Week 3: what worked, what didn't, what you'd do differently. Add it to your `SPRINT-TRACKER` as a "Week 3 retro" section. The honest retrospective is the input for Week 4, where the building gets serious. Skippable. The ship record is the artifact.
+Write a 100-word retrospective on Week 3: what worked, what didn't, what you'd do differently. Add it to your `SPRINT-TRACKER` as a "Week 3 retro" section. The honest retrospective is the input for Week 4, where the building gets serious. Skippable. The ship record is the artefact.
 
 
 ---

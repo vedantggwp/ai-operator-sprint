@@ -84,7 +84,7 @@ The key principle of first-automation day is to stay small. A task that should t
 ## Ship
 
 
-Today's artifact is Automation 1: a working template that takes real inputs and produces usable outputs, with a sample run on record.
+Today's artefact is Automation 1: a working template that takes real inputs and produces usable outputs, with a sample run on record.
 
 
 - [ ] Task chosen from Delegation List (or example task used)
@@ -105,7 +105,7 @@ Today's artifact is Automation 1: a working template that takes real inputs and 
 ## Going deeper (optional)
 
 
-Add an input validation step: ask Claude Code to add a check at the start of the template. "Before processing, confirm the input has at least 3 bullet points. If not, return: 'Input too sparse. Please add more notes.'" Error messages in tools you build are a sign of maturity, not failure. Skippable. One working run is the artifact.
+Add an input validation step: ask Claude Code to add a check at the start of the template. "Before processing, confirm the input has at least 3 bullet points. If not, return: 'Input too sparse. Please add more notes.'" Error messages in tools you build are a sign of maturity, not failure. Skippable. One working run is the artefact.
 
 
 ---

@@ -56,7 +56,7 @@ After the demo, the sprint isn't over. It's the opposite. The tools are set up, 
 ## Ship
 
 
-Today's artifact is the demo: given to the named person, with the sprint tracker closed and the next decision recorded.
+Today's artefact is the demo: given to the named person, with the sprint tracker closed and the next decision recorded.
 
 
 - [ ] Setup complete before the conversation starts
@@ -78,7 +78,7 @@ Today's artifact is the demo: given to the named person, with the sprint tracker
 ## Going deeper (optional)
 
 
-Write a letter to yourself-30-days-ago. One page. What you know now that you didn't know then. What was harder than expected, what was easier. What you'd tell someone starting Day 0 tomorrow. Not a listicle: a letter. Seal it in your `AI-OS` folder and open it in 6 months. It's the best record you'll have of what this month actually was. Skippable. The demo is the artifact.
+Write a letter to yourself-30-days-ago. One page. What you know now that you didn't know then. What was harder than expected, what was easier. What you'd tell someone starting Day 0 tomorrow. Not a listicle: a letter. Seal it in your `AI-OS` folder and open it in 6 months. It's the best record you'll have of what this month actually was. Skippable. The demo is the artefact.
 
 
 ---

@@ -96,7 +96,7 @@ Non-coders: you don't need to write any code today. The task you'll run is plain
 ## Ship
 
 
-Today's artifact is a working Claude Code session: installed, authenticated, and one verified task completed with files on disk.
+Today's artefact is a working Claude Code session: installed, authenticated, and one verified task completed with files on disk.
 
 
 - [ ] Node.js present; Claude Code installed and version confirmed
@@ -118,7 +118,7 @@ Today's artifact is a working Claude Code session: installed, authenticated, and
 ## Going deeper (optional)
 
 
-Ask Claude Code to read your `SPRINT-TRACKER` file (copy it into the `cc-test` folder first) and add a row for Day 15 with today's artifact. One task, five seconds to type, and you've just used an agent to update a document. That's the shape of Week 3. Skippable. First contact is the artifact.
+Ask Claude Code to read your `SPRINT-TRACKER` file (copy it into the `cc-test` folder first) and add a row for Day 15 with today's artefact. One task, five seconds to type, and you've just used an agent to update a document. That's the shape of Week 3. Skippable. First contact is the artefact.
 
 
 ---

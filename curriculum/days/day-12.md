@@ -97,7 +97,7 @@ The goal is not automating admin. It's removing the friction from admin you'll k
 ## Ship
 
 
-Today's artifact is your Admin OS: 3 tested templates for your 3 most common admin transformations, added to WRITING-OS.
+Today's artefact is your Admin OS: 3 tested templates for your 3 most common admin transformations, added to WRITING-OS.
 
 
 - [ ] Notes-to-Actions run on real meeting notes
@@ -118,7 +118,7 @@ Today's artifact is your Admin OS: 3 tested templates for your 3 most common adm
 ## Going deeper (optional)
 
 
-Build one more template for your next most common admin task: the one you think about most on Sunday evenings. It doesn't matter what it is. The structure is the same: context, content, output format, constraints. Skippable. Three templates is the artifact.
+Build one more template for your next most common admin task: the one you think about most on Sunday evenings. It doesn't matter what it is. The structure is the same: context, content, output format, constraints. Skippable. Three templates is the artefact.
 
 
 ---

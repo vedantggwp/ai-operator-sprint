@@ -70,7 +70,7 @@ The proof page is also preparation for the Day 28 story. Writing down "what I ma
 ## Ship
 
 
-Today's artifact is the proof page: published, linked, 5 elements present, accessible to anyone with the link.
+Today's artefact is the proof page: published, linked, 5 elements present, accessible to anyone with the link.
 
 
 - [ ] Format chosen and platform set up
@@ -92,7 +92,7 @@ Today's artifact is the proof page: published, linked, 5 elements present, acces
 ## Going deeper (optional)
 
 
-Add a screenshot or output sample to the proof page: the actual output from one real run, with any sensitive data removed. Visual proof is more convincing than verbal proof. A before-and-after (raw notes vs formatted output) is even better. Skippable. The 5-element page is the artifact.
+Add a screenshot or output sample to the proof page: the actual output from one real run, with any sensitive data removed. Visual proof is more convincing than verbal proof. A before-and-after (raw notes vs formatted output) is even better. Skippable. The 5-element page is the artefact.
 
 
 ---

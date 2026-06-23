@@ -72,7 +72,7 @@ Today you write it once, with Claude as your editor. Then you own it.
 ## Ship
 
 
-Today's artifact is the case study: under 300 words, 5 sections, read-aloud tested, saved in `AI-OS` and added to the proof page.
+Today's artefact is the case study: under 300 words, 5 sections, read-aloud tested, saved in `AI-OS` and added to the proof page.
 
 
 - [ ] 3 interview questions answered honestly
@@ -94,7 +94,7 @@ Today's artifact is the case study: under 300 words, 5 sections, read-aloud test
 ## Going deeper (optional)
 
 
-Post the case study, or a 2-paragraph version of it, on LinkedIn or wherever your professional network lives. Include the proof page link. You don't have to explain the whole sprint; just share what you made and that it took 30 days of 10 minutes each. That framing is interesting to people. Skippable. The `AI-OS` version is the artifact.
+Post the case study, or a 2-paragraph version of it, on LinkedIn or wherever your professional network lives. Include the proof page link. You don't have to explain the whole sprint; just share what you made and that it took 30 days of 10 minutes each. That framing is interesting to people. Skippable. The `AI-OS` version is the artefact.
 
 
 ---

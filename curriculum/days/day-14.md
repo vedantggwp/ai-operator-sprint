@@ -72,7 +72,7 @@ There's a second reason to ship this now. Week 3 starts tomorrow, and it changes
 ## Ship
 
 
-Today's artifact is your AI OS Map v1.0: a clear diagram of your complete system, honest about what works and what's missing.
+Today's artefact is your AI OS Map v1.0: a clear diagram of your complete system, honest about what works and what's missing.
 
 
 - [ ] Every OS module listed, one-line description each
@@ -93,7 +93,7 @@ Today's artifact is your AI OS Map v1.0: a clear diagram of your complete system
 ## Going deeper (optional)
 
 
-Draw a second version of the map: not what you have, but what you want in 16 days, when Day 30 arrives. Call it "AI OS v2.0 (target)". The gap between v1.0 and v2.0 is your Week 4 build brief. Skippable. The v1.0 map is the artifact.
+Draw a second version of the map: not what you have, but what you want in 16 days, when Day 30 arrives. Call it "AI OS v2.0 (target)". The gap between v1.0 and v2.0 is your Week 4 build brief. Skippable. The v1.0 map is the artefact.
 
 
 ---

@@ -85,7 +85,7 @@ The point of having a system is never having to start from scratch. Every writin
 ## Ship
 
 
-Today's artifact is your Writing OS: a style anchor, 3 modes with constraints, and a working voice check, saved in `AI-OS` and loaded into Sprint HQ.
+Today's artefact is your Writing OS: a style anchor, 3 modes with constraints, and a working voice check, saved in `AI-OS` and loaded into Sprint HQ.
 
 
 - [ ] STYLE-ANCHOR saved: a real sample of your writing you're proud of
@@ -106,7 +106,7 @@ Today's artifact is your Writing OS: a style anchor, 3 modes with constraints, a
 ## Going deeper (optional)
 
 
-Create a fourth mode: STORY. A short personal anecdote, used as an example or hook. Include a rule: "starts with a specific moment, not a general statement." The best writing starts with a scene, not a point. Skippable. Three modes is the artifact.
+Create a fourth mode: STORY. A short personal anecdote, used as an example or hook. Include a rule: "starts with a specific moment, not a general statement." The best writing starts with a scene, not a point. Skippable. Three modes is the artefact.
 
 
 ---

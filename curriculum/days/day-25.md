@@ -83,7 +83,7 @@ Today you apply the 20% of polish that matters.
 ## Ship
 
 
-Today's artifact is v2: first-impression polish applied, the "requires explaining" audit done, saved in `demo-build`.
+Today's artefact is v2: first-impression polish applied, the "requires explaining" audit done, saved in `demo-build`.
 
 
 - [ ] First-impression audit: 3 items identified
@@ -105,7 +105,7 @@ Today's artifact is v2: first-impression polish applied, the "requires explainin
 ## Going deeper (optional)
 
 
-Record a 30-second video of yourself doing the demo against v2. No audience: just you and a screen recording tool. Watch it back. Every time you say "and so here I" or "you might be wondering", that's something to fix or cut. The video reveals the friction in the experience faster than reading the code. Skippable. v2 is the artifact.
+Record a 30-second video of yourself doing the demo against v2. No audience: just you and a screen recording tool. Watch it back. Every time you say "and so here I" or "you might be wondering", that's something to fix or cut. The video reveals the friction in the experience faster than reading the code. Skippable. v2 is the artefact.
 
 
 ---

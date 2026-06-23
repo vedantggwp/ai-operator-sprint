@@ -77,7 +77,7 @@ Today is quick: show the v0, collect one piece of real confusion, fix it.
 ## Ship
 
 
-Today's artifact is v1: v0 with one real piece of feedback applied, saved in `demo-build`.
+Today's artefact is v1: v0 with one real piece of feedback applied, saved in `demo-build`.
 
 
 - [ ] v0 shown to a real person (not your Day 30 person)
@@ -99,7 +99,7 @@ Today's artifact is v1: v0 with one real piece of feedback applied, saved in `de
 ## Going deeper (optional)
 
 
-After the fix, show v1 to the same person for 60 seconds: "I made the change. Does this work better?" You don't need a second full session: just confirmation that the fix hit the right thing. Skippable. v1 with the fix is the artifact.
+After the fix, show v1 to the same person for 60 seconds: "I made the change. Does this work better?" You don't need a second full session: just confirmation that the fix hit the right thing. Skippable. v1 with the fix is the artefact.
 
 
 ---

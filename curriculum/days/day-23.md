@@ -68,13 +68,13 @@ This is the same principle as Day 0's commitment: the date pulls you forward. v0
    These 3 notes are tomorrow's brief.
 
 
-5. **Save v0 (1 min).** Name every file in the folder with `-v0` at the end. If there's a runnable output, open it and take a screenshot or copy the output. Add the artifact to your `SPRINT-TRACKER`: "Day 23: v0 of [demo title] exists."
+5. **Save v0 (1 min).** Name every file in the folder with `-v0` at the end. If there's a runnable output, open it and take a screenshot or copy the output. Add the artefact to your `SPRINT-TRACKER`: "Day 23: v0 of [demo title] exists."
 
 
 ## Ship
 
 
-Today's artifact is v0: the roughest version of your demo that shows the shape of the thing, saved in `demo-build`, with 3 notes about what comes next.
+Today's artefact is v0: the roughest version of your demo that shows the shape of the thing, saved in `demo-build`, with 3 notes about what comes next.
 
 
 - [ ] Demo Spec read and "Day 23" task identified
@@ -96,7 +96,7 @@ Today's artifact is v0: the roughest version of your demo that shows the shape o
 ## Going deeper (optional)
 
 
-Run v0 through your own trust checklist from Day 5. Not for factual accuracy: for the experience of watching someone else (your Day 30 person) use it. Would they know what to do with this? What's the first thing they'd be confused by? Write the answer down and add it to tomorrow's notes. Skippable. v0 is the artifact.
+Run v0 through your own trust checklist from Day 5. Not for factual accuracy: for the experience of watching someone else (your Day 30 person) use it. Would they know what to do with this? What's the first thing they'd be confused by? Write the answer down and add it to tomorrow's notes. Skippable. v0 is the artefact.
 
 
 ---

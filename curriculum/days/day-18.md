@@ -85,7 +85,7 @@ Note: MCP is a fast-moving standard. Specific connector names, install commands,
 ## Ship
 
 
-Today's artifact is one working MCP connector: installed, authenticated, and one real task completed through it.
+Today's artefact is one working MCP connector: installed, authenticated, and one real task completed through it.
 
 
 - [ ] At least one MCP connector set up and authenticated
@@ -106,7 +106,7 @@ Today's artifact is one working MCP connector: installed, authenticated, and one
 ## Going deeper (optional)
 
 
-Look up the MCP connector for a service you use daily: your calendar, your task manager, or your note-taking app. Even if you don't install it today, find the documentation and note what tasks it would enable. Building a list of connectors to try in week 4 is a legitimate use of 5 minutes. Skippable. One working connector is the artifact.
+Look up the MCP connector for a service you use daily: your calendar, your task manager, or your note-taking app. Even if you don't install it today, find the documentation and note what tasks it would enable. Building a list of connectors to try in week 4 is a legitimate use of 5 minutes. Skippable. One working connector is the artefact.
 
 
 ---

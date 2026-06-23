@@ -61,7 +61,7 @@ The most common mistake in demo recordings is spending the first 30 seconds expl
    <!-- FACTCHECK: Verify current screen recording shortcuts for Mac and Windows. Mac shortcut (Shift+Cmd+5) is longstanding but check. Windows Game Bar (Win+G) verify current availability -->
 
 
-4. **Watch it back (1 min).** Watch the recording once. Note one thing you'd change. Don't re-record: change the note. The recording exists. That's the artifact.
+4. **Watch it back (1 min).** Watch the recording once. Note one thing you'd change. Don't re-record: change the note. The recording exists. That's the artefact.
 
 
 5. **Send it to one person (1 min).** Not your Day 30 person: someone whose opinion you trust. Send the recording and say: "2-minute demo. What's the one thing that would make it more convincing?" You want the answer before tomorrow.
@@ -70,7 +70,7 @@ The most common mistake in demo recordings is spending the first 30 seconds expl
 ## Ship
 
 
-Today's artifact is the 2-minute demo recording: complete, watchable, sent to one person for a quick response.
+Today's artefact is the 2-minute demo recording: complete, watchable, sent to one person for a quick response.
 
 
 - [ ] 4-sentence script written and read aloud
@@ -92,7 +92,7 @@ Today's artifact is the 2-minute demo recording: complete, watchable, sent to on
 ## Going deeper (optional)
 
 
-Post the recording or a link to it. Paired with your proof page and case study, the recording completes the trio: something to read, something to watch, something to try. All three together, linked from one place, is a professional portfolio item. Skippable. The 2-minute recording is the artifact.
+Post the recording or a link to it. Paired with your proof page and case study, the recording completes the trio: something to read, something to watch, something to try. All three together, linked from one place, is a professional portfolio item. Skippable. The 2-minute recording is the artefact.
 
 
 ---

@@ -20,7 +20,7 @@ The honest picture: different models and products have different strengths, and 
 The main alternatives to Claude are large language models from other providers: OpenAI's GPT models (accessible via ChatGPT and the API), Google's Gemini models, and a small number of open-weight models you can run locally. Each has a different character: different default tone, different performance on code vs prose vs reasoning, different context window, different pricing. The only way to know which matters for your work is to test on your work.
 
 
-Today you'll run the same task you ran on Day 3 (weak prompt vs strong brief) on one other tool. The comparison is the artifact. Then you'll write a one-page "when to use what" card so you don't have to think about this again until you actively want to.
+Today you'll run the same task you ran on Day 3 (weak prompt vs strong brief) on one other tool. The comparison is the artefact. Then you'll write a one-page "when to use what" card so you don't have to think about this again until you actively want to.
 
 
 ## Build
@@ -85,7 +85,7 @@ Today you'll run the same task you ran on Day 3 (weak prompt vs strong brief) on
 ## Ship
 
 
-Today's artifact is your STACK-CARD: a comparison based on a real task, written into a usable decision aid.
+Today's artefact is your STACK-CARD: a comparison based on a real task, written into a usable decision aid.
 
 
 - [ ] Same task run on Claude and one other tool
@@ -106,7 +106,7 @@ Today's artifact is your STACK-CARD: a comparison based on a real task, written 
 ## Going deeper (optional)
 
 
-Run the research brief from Day 9 through Perplexity or a search-augmented model. Compare the source quality and confidence ratings to Claude's version. Research is where the different architecture (search vs knowledge) matters most. Skippable. The STACK-CARD is the artifact.
+Run the research brief from Day 9 through Perplexity or a search-augmented model. Compare the source quality and confidence ratings to Claude's version. Research is where the different architecture (search vs knowledge) matters most. Skippable. The STACK-CARD is the artefact.
 
 
 ---

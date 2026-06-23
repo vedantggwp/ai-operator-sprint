@@ -84,7 +84,7 @@ Your Research OS is a simple three-step template: brief the question, supply the
 ## Ship
 
 
-Today's artifact is one completed research brief: a structured question, 5 claims with confidence ratings, 2 flagged for verification, and one source integrated.
+Today's artefact is one completed research brief: a structured question, 5 claims with confidence ratings, 2 flagged for verification, and one source integrated.
 
 
 - [ ] Structured brief run on a real question from your work
@@ -105,7 +105,7 @@ Today's artifact is one completed research brief: a structured question, 5 claim
 ## Going deeper (optional)
 
 
-Add a sixth step to your Research OS: after saving the brief, open one of the "high confidence" claims and ask Claude where you'd verify it. Even the claims it's confident about need a home. Skippable today. The 5-step version is the artifact.
+Add a sixth step to your Research OS: after saving the brief, open one of the "high confidence" claims and ask Claude where you'd verify it. Even the claims it's confident about need a home. Skippable today. The 5-step version is the artefact.
 
 
 ---

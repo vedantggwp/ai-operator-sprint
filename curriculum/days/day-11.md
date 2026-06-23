@@ -83,7 +83,7 @@ Today you run this once on a real document from your `AI-OS` folder or your work
 ## Ship
 
 
-Today's artifact is your file-task section in WRITING-OS: 3 templates, each tested against a real document, ready to run on any file.
+Today's artefact is your file-task section in WRITING-OS: 3 templates, each tested against a real document, ready to run on any file.
 
 
 - [ ] Real document uploaded and processed with a structured brief
@@ -104,7 +104,7 @@ Today's artifact is your file-task section in WRITING-OS: 3 templates, each test
 ## Going deeper (optional)
 
 
-Create a fourth file-task template: "Spot the gap." Upload a document and ask: "What question does this document raise that it doesn't answer? List the 3 biggest gaps." The best use of AI on documents isn't extraction; it's identifying what's missing. Skippable. Three templates is the artifact.
+Create a fourth file-task template: "Spot the gap." Upload a document and ask: "What question does this document raise that it doesn't answer? List the 3 biggest gaps." The best use of AI on documents isn't extraction; it's identifying what's missing. Skippable. Three templates is the artefact.
 
 
 ---

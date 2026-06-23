@@ -84,7 +84,7 @@ One more thing: the README is the thing your Day 30 person receives after the de
 ## Ship
 
 
-Today's artifact is the README: one page, 4 sections, stranger-readable, saved in `demo-build` alongside v2.
+Today's artefact is the README: one page, 4 sections, stranger-readable, saved in `demo-build` alongside v2.
 
 
 - [ ] Fixable items from "requires explaining" list fixed in the code
@@ -99,14 +99,14 @@ Today's artifact is the README: one page, 4 sections, stranger-readable, saved i
 
 - **The README is longer than one page.** Cut it to the 4 sections. Anything that doesn't fit in those 4 sections is either: a bug that should be fixed, a feature that wasn't in the spec, or context the person doesn't need before they start. Separate each one and deal with them appropriately.
 - **I can't write "How to start" because the steps are complicated.** Then the tool is still too complicated. Simplify one step, not the README. A README that accurately describes a complicated tool is honest; it's also a signal to go back and simplify the tool.
-- **I don't want to put my name on something unfinished.** It's not unfinished: it's v2 with documentation. That's a complete sprint artifact. The name goes on it because you built it, not because it's perfect. "Built by [name]" doesn't mean "guaranteed to be flawless."
+- **I don't want to put my name on something unfinished.** It's not unfinished: it's v2 with documentation. That's a complete sprint artefact. The name goes on it because you built it, not because it's perfect. "Built by [name]" doesn't mean "guaranteed to be flawless."
 - **The README was generated entirely by Claude and doesn't sound like me.** Edit it. The README is the document your Day 30 person may keep. Make it sound like the person they're meeting on Day 30, not a template.
 
 
 ## Going deeper (optional)
 
 
-Add a section to the README: "What's next." 2-3 sentences on what this would look like if you had another week. That section is honest about the current state and frames the demo as a beginning, not an end. Skippable. The 4-section README is the artifact.
+Add a section to the README: "What's next." 2-3 sentences on what this would look like if you had another week. That section is honest about the current state and frames the demo as a beginning, not an end. Skippable. The 4-section README is the artefact.
 
 
 ---

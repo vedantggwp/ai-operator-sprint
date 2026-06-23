@@ -78,7 +78,7 @@ The discipline here is the same as all the best briefs in this sprint: specific 
 ## Ship
 
 
-Today's artifact is a working CLAUDE.md: standing instructions for your automation project, verified to load automatically at session start.
+Today's artefact is a working CLAUDE.md: standing instructions for your automation project, verified to load automatically at session start.
 
 
 - [ ] CLAUDE.md exists in auto-1 folder
@@ -93,13 +93,13 @@ Today's artifact is a working CLAUDE.md: standing instructions for your automati
 - **Claude Code doesn't seem to be reading the CLAUDE.md.** The file needs to be in the root of the folder you started the session from. Check that you're in `auto-1` (type `pwd` in the terminal) and that the file is there (type `ls`). The filename is case-sensitive on most systems.
 - **All the rules came from the template rather than my experience.** Good that you noticed. Go back and add 2 rules based on what actually happened in your Day 16 session. The template gives you the structure; the experience gives you the content.
 - **The file is too long.** CLAUDE.md works best under 400 words. Long files slow the session start and can crowd out the actual task. Cut any rule you haven't needed yet. Add it back when you need it.
-- **I don't have an auto-1 folder because Day 16 didn't work.** Write a generic CLAUDE.md for a new folder called `sprint-work`. Use the 5 sections from step 3 as written, filling in placeholder rules. This is still a useful artifact, even without yesterday's data.
+- **I don't have an auto-1 folder because Day 16 didn't work.** Write a generic CLAUDE.md for a new folder called `sprint-work`. Use the 5 sections from step 3 as written, filling in placeholder rules. This is still a useful artefact, even without yesterday's data.
 
 
 ## Going deeper (optional)
 
 
-Add a sixth section: "Anti-patterns to avoid." List 2-3 things you've seen Claude Code do that you don't want it to do by default: "don't add comments to every line of code", "don't ask permission for minor formatting decisions", "don't summarise the whole project at the start of every session". The negative rules are often the most powerful. Skippable. Five sections is the artifact.
+Add a sixth section: "Anti-patterns to avoid." List 2-3 things you've seen Claude Code do that you don't want it to do by default: "don't add comments to every line of code", "don't ask permission for minor formatting decisions", "don't summarise the whole project at the start of every session". The negative rules are often the most powerful. Skippable. Five sections is the artefact.
 
 
 ---

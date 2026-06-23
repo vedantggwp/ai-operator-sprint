@@ -41,13 +41,13 @@ There's a principle here that goes beyond the sprint. The operators who get the 
 
 
    Build me a markdown tracker with these columns:
-   Day | Title | Artifact built | Location (AI-OS / Sprint HQ / both) | Status (done / partial / missing)
+   Day | Title | Artefact built | Location (AI-OS / Sprint HQ / both) | Status (done / partial / missing)
 
 
    Fill in Days 0-13 based on what I've told you. For anything not mentioned, mark it "missing" rather than guessing.
 
 
-   Add a footer with: total days done, total artifacts in AI-OS, and one line noting the gap with the most impact (the missing artifact that matters most to fix).
+   Add a footer with: total days done, total artefacts in AI-OS, and one line noting the gap with the most impact (the missing artefact that matters most to fix).
    ```
 
 
@@ -60,17 +60,17 @@ There's a principle here that goes beyond the sprint. The operators who get the 
 4. **Save it (1 min).** Copy the tracker into a note called `SPRINT-TRACKER` in `AI-OS`. Add it to Sprint HQ's knowledge.
 
 
-5. **Set your evening habit (2 min).** At the bottom of `SPRINT-TRACKER`, add a row for Day 14 with status "pending". Then add a note at the very bottom: "Update: each evening, add the day's artifact and set status. Takes 90 seconds." The tracker is only useful if you keep it current.
+5. **Set your evening habit (2 min).** At the bottom of `SPRINT-TRACKER`, add a row for Day 14 with status "pending". Then add a note at the very bottom: "Update: each evening, add the day's artefact and set status. Takes 90 seconds." The tracker is only useful if you keep it current.
 
 
 ## Ship
 
 
-Today's artifact is your Sprint Tracker: a complete accounting of Days 0-13, gaps named, saved in `AI-OS` and uploaded to Sprint HQ.
+Today's artefact is your Sprint Tracker: a complete accounting of Days 0-13, gaps named, saved in `AI-OS` and uploaded to Sprint HQ.
 
 
 - [ ] Every day from 0 to 13 listed, status set honestly
-- [ ] Gap line identifies the missing artifact with most impact
+- [ ] Gap line identifies the missing artefact with most impact
 - [ ] Real gaps either filled or marked as intentional
 - [ ] `SPRINT-TRACKER` in `AI-OS` and Sprint HQ
 
@@ -78,16 +78,16 @@ Today's artifact is your Sprint Tracker: a complete accounting of Days 0-13, gap
 ## If it goes wrong
 
 
-- **This is depressing. Half the days are missing.** That's the tracker doing its job. A list of honest gaps is more valuable than a beautiful log of things you half-remember doing. Pick one missing artifact today, the simplest one, and do a 5-minute catch-up. Then decide whether to do the others or let them go and focus forward.
+- **This is depressing. Half the days are missing.** That's the tracker doing its job. A list of honest gaps is more valuable than a beautiful log of things you half-remember doing. Pick one missing artefact today, the simplest one, and do a 5-minute catch-up. Then decide whether to do the others or let them go and focus forward.
 - **I can't remember what I built some days.** Check your Claude chat history (inside Sprint HQ, each past chat shows what was discussed). Check your folder for anything you saved. If you still can't reconstruct it, mark it as "missing" and move on. You know what you're building from here.
-- **The tracker is too long to update quickly.** Cut it to the columns you'll actually use. Day | Artifact | Status is enough. If you won't fill in Location every evening, remove it. A short tracker you maintain beats a thorough one you abandon.
+- **The tracker is too long to update quickly.** Cut it to the columns you'll actually use. Day | Artefact | Status is enough. If you won't fill in Location every evening, remove it. A short tracker you maintain beats a thorough one you abandon.
 - **Sprint HQ's knowledge is getting full.** Check whether you have older files that are now superseded: `PROMPTS` was replaced by `PROMPT-LIBRARY`, for example. Remove the old version and keep the new one. Knowledge that's out of date is noise.
 
 
 ## Going deeper (optional)
 
 
-Add a second section to the tracker: "Habits running." For each daily habit the sprint introduced (10-minute daily build, updating CONTEXT weekly, running the trust checklist), mark it as running or not. Habits are as important as artifacts. Skippable. The day tracker is the artifact.
+Add a second section to the tracker: "Habits running." For each daily habit the sprint introduced (10-minute daily build, updating CONTEXT weekly, running the trust checklist), mark it as running or not. Habits are as important as artefacts. Skippable. The day tracker is the artefact.
 
 
 ---

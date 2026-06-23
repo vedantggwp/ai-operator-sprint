@@ -33,7 +33,7 @@ You do not need to know yet what you will build. There is a menu below, and you 
    Go with your gut. If you are still stuck after two minutes, paste this into Claude. It is your first prompt of the sprint:
 
    ```
-   I'm starting a 30-day programme where I build one small AI artifact a day and demo something real on Day 30. Help me choose my demo.
+   I'm starting a 30-day programme where I build one small AI artefact a day and demo something real on Day 30. Help me choose my demo.
 
    The menu:
    1. A personal site built with an AI agent

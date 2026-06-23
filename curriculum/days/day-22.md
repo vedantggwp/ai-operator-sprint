@@ -73,7 +73,7 @@ Today you'll spec the demo with Claude as your thinking partner. Claude knows yo
 ## Ship
 
 
-Today's artifact is your Demo Spec: scoped, feasible, with a Day 23-26 plan and a saved-the-date message sent.
+Today's artefact is your Demo Spec: scoped, feasible, with a Day 23-26 plan and a saved-the-date message sent.
 
 
 - [ ] COMMITMENT re-read, person confirmed
@@ -95,7 +95,7 @@ Today's artifact is your Demo Spec: scoped, feasible, with a Day 23-26 plan and 
 ## Going deeper (optional)
 
 
-Add a "risk register" section to the Demo Spec: 2 things that could go wrong in the next 8 days and one sentence on what you'd do if each one happened. Risks you've named are risks you've planned for. Skippable. The spec itself is the artifact.
+Add a "risk register" section to the Demo Spec: 2 things that could go wrong in the next 8 days and one sentence on what you'd do if each one happened. Risks you've named are risks you've planned for. Skippable. The spec itself is the artefact.
 
 
 ---

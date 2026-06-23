@@ -14,7 +14,7 @@ needs_factcheck: true
 Every programme needs a build day. A day where the brief is simply: make something that didn't exist yesterday.
 
 
-The first 18 days have been structured. You followed steps. You ran specific prompts. You built specific artifacts. That structure was useful because it gave you the vocabulary and the tools. Today you use the vocabulary yourself.
+The first 18 days have been structured. You followed steps. You ran specific prompts. You built specific artefacts. That structure was useful because it gave you the vocabulary and the tools. Today you use the vocabulary yourself.
 
 
 Build days produce different things for different people. Someone doing a research-heavy job might build a reading list tool. Someone managing a team might build a status report template that writes itself from meeting notes. Someone with a creative project might build a portfolio page. The sprint isn't about building the same thing; it's about the practice of building.
@@ -72,7 +72,7 @@ You have 10 minutes. That's enough to build a first version of almost anything, 
 ## Ship
 
 
-Today's artifact is whatever you built: a v1 exists, it has a name a stranger could understand, and you can describe it in one sentence.
+Today's artefact is whatever you built: a v1 exists, it has a name a stranger could understand, and you can describe it in one sentence.
 
 
 - [ ] Brief written before opening Claude Code (what in, what out, what's done)
@@ -85,7 +85,7 @@ Today's artifact is whatever you built: a v1 exists, it has a name a stranger co
 
 
 - **I can't decide what to build.** Start with the example in Step 1 and pick whichever of the 3 options is closest to something you'd use this week. Indecision has a cure: pick the smallest option and start.
-- **The build ran over 10 minutes.** Stop and take what you have. The point of the time constraint is to produce a v1, not a finished product. A rough v1 that took 10 minutes is the right artifact. A polished tool that took 2 hours breaks the sprint.
+- **The build ran over 10 minutes.** Stop and take what you have. The point of the time constraint is to produce a v1, not a finished product. A rough v1 that took 10 minutes is the right artefact. A polished tool that took 2 hours breaks the sprint.
 - **Claude Code got confused and built the wrong thing.** That's a briefing failure. What part of your brief was ambiguous? Find the sentence where it went off-track, rewrite it, and try once more in a fresh session. The correction is the learning.
 - **What I built isn't useful.** That's useful information about the brief. Write one sentence: "I built [X] and it didn't work because [Y]." That sentence goes in your tracker and informs Day 22's demo spec. Building something that fails is not failure; building nothing is.
 
@@ -93,7 +93,7 @@ Today's artifact is whatever you built: a v1 exists, it has a name a stranger co
 ## Going deeper (optional)
 
 
-Deploy it. Put the file somewhere other people can see it: a shared folder, a Notion page, a GitHub Gist. Even a read-only link. "Something that exists and is shared" is meaningfully more real than "something that exists on my computer." Skippable. The v1 on disk is the artifact.
+Deploy it. Put the file somewhere other people can see it: a shared folder, a Notion page, a GitHub Gist. Even a read-only link. "Something that exists and is shared" is meaningfully more real than "something that exists on my computer." Skippable. The v1 on disk is the artefact.
 
 
 ---

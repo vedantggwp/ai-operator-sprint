@@ -87,7 +87,7 @@ Today you write the first version. The 1 in "v1" is there for a reason.
 ## Ship
 
 
-Today's artifact is your `CONTEXT` file: 4 sections, current, uploaded to Sprint HQ, proven to return the right answer about your demo.
+Today's artefact is your `CONTEXT` file: 4 sections, current, uploaded to Sprint HQ, proven to return the right answer about your demo.
 
 
 - [ ] 4 sections written in your own words
@@ -108,7 +108,7 @@ Today's artifact is your `CONTEXT` file: 4 sections, current, uploaded to Sprint
 ## Going deeper (optional)
 
 
-Add a fifth section: "What isn't working." One or two honest sentences about a habit or workflow that hasn't clicked yet. When you update the file next week, that section either gets crossed off or gets more specific. Skippable. The 4-section version is the artifact.
+Add a fifth section: "What isn't working." One or two honest sentences about a habit or workflow that hasn't clicked yet. When you update the file next week, that section either gets crossed off or gets more specific. Skippable. The 4-section version is the artefact.
 
 
 ---

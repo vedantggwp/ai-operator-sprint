@@ -109,7 +109,11 @@ function normaliseFrontmatter(
 ): DayMeta {
   const day = Number(data.day);
   const title = stringValue(data.title);
-  const week = stringValue(data.week);
+  // Days 00-07 may carry `week: 1` as a YAML integer; weeks 2-4 use a string
+  // label. Coerce the numeric form so the loader never throws "Missing
+  // frontmatter" on a perfectly valid integer week.
+  const week =
+    typeof data.week === "number" ? `Week ${data.week}` : stringValue(data.week);
   const time = stringValue(data.time);
   const status = stringValue(data.status);
 
@@ -134,6 +138,8 @@ function normaliseFrontmatter(
 }
 
 function stringValue(value: unknown): string {
-  return typeof value === "string" ? value : "";
+  if (typeof value === "string") return value;
+  if (typeof value === "number") return String(value);
+  return "";
 }
 

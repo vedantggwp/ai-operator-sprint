@@ -1,7 +1,7 @@
 ---
 day: 0
 title: "The Commitment"
-week: 1
+week: "Week 1: Foundations & Taste"
 time: "10 min"
 status: draft
 ---

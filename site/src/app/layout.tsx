@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://sprint.vedantgg.com"),
   title: "AI Operator Sprint — ship something real in 30 days",
   description:
-    "A free, open 30-day challenge: one lesson, one build, one shipped artifact a day — until you demo something real. No account, no card, no locked content.",
+    "A free, open 30-day challenge: one lesson, one build, one shipped artefact a day, until you demo something real. No account, no card, no locked content.",
 };
 
 export default function RootLayout({
